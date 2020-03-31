@@ -10,5 +10,6 @@
     pkg: java-1.8.0-openjdk
     state: present
   register: java_install
+  ignore_errors: yes
   when: which_java_cmd.rc != 0
   become: yes
