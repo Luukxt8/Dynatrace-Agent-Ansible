@@ -17,6 +17,7 @@
     owner: "{{ dynatrace_agent_owner }}"
     group: "{{ dynatrace_agent_group }}"
   when: dynatrace_agent_install_dir_result.stat.exists == True 
+  ignore_errors: yes
   become: yes
 
 - name: "Copy the Dynatrace installer to {{ dynatrace_agent_linux_install_dir }} if the installer is provided locally"
